@@ -27,6 +27,7 @@
 #define CHRON_QR_HM		17
 #define CHRON_PERFTEST		18
 #define CHRON_EXAMPLE		19
+#define CHRON_cfox		20
 
 // Define how visualizations draw themselves
 #define DRAW_INIT_NONE		0

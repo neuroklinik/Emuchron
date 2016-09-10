@@ -32,6 +32,7 @@
 #include "clock/speeddial.h"
 #include "clock/spiderplot.h"
 #include "clock/trafficlight.h"
+#include "clock/cfox.h"
 
 // The months of the year in 3 character text
 extern unsigned char *months[12];
