@@ -48,17 +48,17 @@
 // Determine the second indicator shape.
 // 0 = Needle
 // 1 = Floating arrow
-#define ANA_SEC_TYPE		1
+#define ANA_SEC_TYPE		0
 
 // Determine how the second indicator moves.
 // 0 = Only at a full second stop
 // 1 = Whenever the (x,y) position of a leg changes
-#define ANA_SEC_MOVE		1
+#define ANA_SEC_MOVE		0
 
 // Determine how the minute arrow moves.
 // 0 = Only at a full minute stop
 // 1 = Whenever the (x,y) position of the arrow tip changes
-#define ANA_MIN_MOVE		1
+#define ANA_MIN_MOVE		0
 
 extern volatile uint8_t mcClockOldTS, mcClockOldTM, mcClockOldTH;
 extern volatile uint8_t mcClockNewTS, mcClockNewTM, mcClockNewTH;
