@@ -18,7 +18,7 @@
 
 // Uncomment if you want to apply a 'glitch' mode to the clock.
 // Refer to digiPeriodSet() for setting glitch delay and duration.
-//#define DIGI_GLITCH
+#define DIGI_GLITCH
 
 // Specifics for digital clock
 #define DIGI_ALARM_X_START	2
