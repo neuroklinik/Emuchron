@@ -143,7 +143,7 @@ static clockDriver_t emuMonochron[] =
   {CHRON_QR_HMS,      DRAW_INIT_FULL, qrInit,             qrCycle,             0},
   {CHRON_QR_HM,       DRAW_INIT_FULL, qrInit,             qrCycle,             0},
   {CHRON_PERFTEST,    DRAW_INIT_FULL, perfInit,           perfCycle,           0},
-  {CHRON_cfox,        DRAW_INIT_FULL, cfoxInit,           cfoxCycle,           0}
+  {CHRON_cfox,        DRAW_INIT_FULL, cfoxInit,           cfoxCycle,           cfoxButton}
 };
 static int emuMonochronCount = sizeof(emuMonochron) / sizeof(clockDriver_t);
 

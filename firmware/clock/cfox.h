@@ -9,4 +9,5 @@
 // Basic cfox clock
 void cfoxCycle(void);
 void cfoxInit(u08 mode);
+void cfoxButton(u08 pressedButton);
 #endif
