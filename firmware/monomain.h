@@ -29,11 +29,11 @@
 
 // Uncomment this if you want a Mario tune alarm instead of a two-tone alarm.
 // Note: This will cost you ~615 bytes of Monochron program and data space.
-#define MARIO
+// #define MARIO
 
 // Two-tone alarm beep
 #define ALARM_FREQ_1	4000
-#define ALARM_FREQ_2	3750
+#define ALARM_FREQ_2	3000
 #define ALARMTICK_MS	325
 
 // Set timeouts for snooze and alarm (in seconds)
