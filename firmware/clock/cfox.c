@@ -34,16 +34,8 @@ extern volatile uint8_t mcU8Util1;
 static u08 i=6;
 void cfoxCycle(void)
 {
-// static u08 i=6;
-/*
-if (i<=120 && mcClockNewTS==mcClockOldTS) {
-    glcdFillRectangle(i,56,3,3,mcFgColor);
-    if (i>6) glcdFillRectangle(i-10,56,3,3,mcBgColor);
-    i=i+10; } else {
-    if (i>10 && i<134) glcdFillRectangle(i-10,56,3,3,mcBgColor);
-    i=6;    
-}
-*/
+
+// Bottom dot, forward/reverse for elapsed/remaining.
 if ((i>=6 && i<=116) && mcClockNewTS==mcClockOldTS)
 {
     glcdFillRectangle(i,56,3,3,mcFgColor);
@@ -51,8 +43,6 @@ if ((i>=6 && i<=116) && mcClockNewTS==mcClockOldTS)
     if (i<=115 && mcU8Util1 == REMAINING) glcdFillRectangle(i+10,56,3,3,mcBgColor);
     if (mcU8Util1 == ELAPSED) {i=i+10;} else {i=i-10;}
 } else {
-    // if (i>16 && i<126 && mcU8Util1 == ELAPSED) glcdFillRectangle(i-10,56,3,3,mcBgColor);
-    // if (i>16 && i<126 && mcU8Util1 == REMAINING) glcdFillRectangle(i+10,56,3,3,mcBgColor);
     glcdFillRectangle(6,56,113,3,mcBgColor);
     if (mcU8Util1 == ELAPSED) {i=6;} else {i=116;}   
 }
@@ -61,6 +51,7 @@ if ((i>=6 && i<=116) && mcClockNewTS==mcClockOldTS)
 if (mcAlarming == GLCD_TRUE)
 {
   glcdPutStr2(5,5,FONT_5X5P,"DEFCON 1!",mcFgColor);
+  glcdPutStr2(125-glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, FONT_5X5P, "DEFCON 1!", mcFgColor);
 }
 // Update the alarm indicator area.
 if (mcUpdAlarmSwitch == GLCD_TRUE)
@@ -72,9 +63,10 @@ if (mcUpdAlarmSwitch == GLCD_TRUE)
     msg[2] = ':';
     animValToStr(mcAlarmM, &msg[3]);
     glcdPutStr2(5, 5, FONT_5X5P, "ARMED", mcFgColor);
-    glcdPutStr2(124-glcdGetWidthStr(FONT_5X5P, msg), 5, FONT_5X5P, msg, mcFgColor);
+    glcdPutStr2(125-glcdGetWidthStr(FONT_5X5P, msg), 5, FONT_5X5P, msg, mcFgColor);
   } else {
     glcdFillRectangle2(5, 5, glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, ALIGN_AUTO, FILL_BLANK, mcFgColor);
+    glcdFillRectangle2(125-glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, ALIGN_AUTO, FILL_BLANK, mcFgColor);
   }
 }
 

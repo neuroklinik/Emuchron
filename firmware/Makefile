@@ -29,11 +29,15 @@ BASE = anim.c buttons.c config.c glcd.c i2c.c ks0108.c monomain.c util.c
 # Based on the selection of source files in SRC, configure the clocks
 # in monochron[] in anim.c [firmware].
 
-# Monochron clocks - I
+# Monochron clocks - cfox
 SRC = $(BASE) \
-  clock/digital.c clock/analog.c clock/puzzle.c \
-  clock/spotfire.c clock/cascade.c clock/speeddial.c clock/spiderplot.c \
-  clock/trafficlight.c
+clock/cfox.c clock/nerd.c
+
+# Monochron clocks - I
+# SRC = $(BASE) \
+# clock/digital.c clock/analog.c clock/puzzle.c \
+# clock/spotfire.c clock/cascade.c clock/speeddial.c clock/spiderplot.c \
+# clock/trafficlight.c
 
 # Monochron clocks - II
 #SRC = $(BASE) \
