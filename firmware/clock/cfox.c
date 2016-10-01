@@ -31,7 +31,7 @@ extern volatile uint8_t mcBgColor, mcFgColor;
 extern volatile uint8_t mcAlarmH, mcAlarmM, mcAlarming;
 // Display mode Elapsed/Remaining
 extern volatile uint8_t mcU8Util1;
-static u08 i=6;
+static uint8_t i=6;
 void cfoxCycle(void)
 {
 

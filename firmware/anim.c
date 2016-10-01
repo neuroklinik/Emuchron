@@ -116,7 +116,6 @@ char animYear[] = "Year";
 // files in SRC in Makefile [firmware].
 clockDriver_t monochron[] =
 {
-     {CHRON_CFOX,        DRAW_INIT_FULL,    cfoxInit,           cfoxCycle,           cfoxButton}
   // {CHRON_PERFTEST,    DRAW_INIT_FULL,    perfInit,           perfCycle,           0}
   // {CHRON_CASCADE,     DRAW_INIT_FULL,    spotCascadeInit,    spotCascadeCycle,    0}
   //,{CHRON_SPEEDDIAL,   DRAW_INIT_PARTIAL, spotSpeedDialInit,  spotSpeedDialCycle,  0}
@@ -127,7 +126,8 @@ clockDriver_t monochron[] =
   //,{CHRON_DIGITAL_HMS, DRAW_INIT_FULL,    digitalHmsInit,     digitalCycle,        0}
   //,{CHRON_DIGITAL_HM,  DRAW_INIT_PARTIAL, digitalHmInit,      digitalCycle,        0}
   //,{CHRON_MOSQUITO,    DRAW_INIT_FULL,    mosquitoInit,       mosquitoCycle,       0}
-    ,{CHRON_NERD,        DRAW_INIT_FULL,    nerdInit,           nerdCycle,           0}
+     {CHRON_NERD,        DRAW_INIT_FULL,    nerdInit,           nerdCycle,           0}
+    ,{CHRON_CFOX,        DRAW_INIT_FULL,    cfoxInit,           cfoxCycle,           cfoxButton}     
   //,{CHRON_PONG,        DRAW_INIT_FULL,    pongInit,           pongCycle,           pongButton}
   //,{CHRON_PUZZLE,      DRAW_INIT_FULL,    puzzleInit,         puzzleCycle,         puzzleButton}
   //,{CHRON_SLIDER,      DRAW_INIT_FULL,    sliderInit,         sliderCycle,         0}
