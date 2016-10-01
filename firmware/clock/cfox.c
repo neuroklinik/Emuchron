@@ -47,14 +47,15 @@ if ((i>=6 && i<=116) && mcClockNewTS==mcClockOldTS)
     if (mcU8Util1 == ELAPSED) {i=6;} else {i=116;}   
 }
 
+
 // Alarming?
 if (mcAlarming == GLCD_TRUE)
 {
   glcdPutStr2(5,5,FONT_5X5P,"DEFCON 1!",mcFgColor);
-  glcdPutStr2(125-glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, FONT_5X5P, "DEFCON 1!", mcFgColor);
+  glcdPutStr2(124-glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, FONT_5X5P, "DEFCON 1!", mcFgColor);
 }
 // Update the alarm indicator area.
-if (mcUpdAlarmSwitch == GLCD_TRUE)
+if (mcUpdAlarmSwitch == GLCD_TRUE || mcAlarming == GLCD_FALSE)
 {
   if (mcAlarmSwitch == ALARM_SWITCH_ON)
   {
@@ -63,18 +64,17 @@ if (mcUpdAlarmSwitch == GLCD_TRUE)
     msg[2] = ':';
     animValToStr(mcAlarmM, &msg[3]);
     glcdPutStr2(5, 5, FONT_5X5P, "ARMED", mcFgColor);
-    glcdPutStr2(125-glcdGetWidthStr(FONT_5X5P, msg), 5, FONT_5X5P, msg, mcFgColor);
+    glcdPutStr2(124-glcdGetWidthStr(FONT_5X5P, msg), 5, FONT_5X5P, msg, mcFgColor);
   } else {
     glcdFillRectangle2(5, 5, glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, ALIGN_AUTO, FILL_BLANK, mcFgColor);
     glcdFillRectangle2(125-glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, glcdGetWidthStr(FONT_5X5P, "DEFCON 1!"), 5, ALIGN_AUTO, FILL_BLANK, mcFgColor);
   }
 }
-
   // Only if a time event or init is flagged we need to update the clock
   if (mcClockTimeEvent == GLCD_FALSE && mcClockInit == GLCD_FALSE)
-    return; 
-char hrsInfo[6];
-char msInfo[14];
+   return; 
+static char hrsInfo[7];
+static char msInfo[15];
 
 if (mcU8Util1==ELAPSED) {
 glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, "GAME"))/2, 7, FONT_5X7N, "GAME", mcFgColor);
@@ -85,6 +85,7 @@ glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, " TIME ELAPSED "))/2, 18, FONT_5X7N,
   hrsInfo[3] = 'H';
   hrsInfo[4] = 'R';
   hrsInfo[5] = 'S';
+  hrsInfo[6] = '\0';
   animValToStr(mcClockNewTM, msInfo);
   msInfo[2] = ' ';
   msInfo[3] = 'M';
@@ -97,6 +98,7 @@ glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, " TIME ELAPSED "))/2, 18, FONT_5X7N,
   msInfo[11] = 'S';
   msInfo[12] = 'E';
   msInfo[13] = 'C';
+  msInfo[14] = '\0';
 
   glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, hrsInfo))/2, 34, FONT_5X7N, hrsInfo, mcFgColor);
   glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, msInfo))/2, 45, FONT_5X7N, msInfo, mcFgColor);
@@ -113,6 +115,7 @@ glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, "TIME REMAINING"))/2, 18, FONT_5X7N,
   hrsInfo[3] = 'H';
   hrsInfo[4] = 'R';
   hrsInfo[5] = 'S';
+  hrsInfo[6] = '\0';
   animValToStr(dMins%60, msInfo);
   msInfo[2] = ' ';
   msInfo[3] = 'M';
@@ -125,12 +128,12 @@ glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, "TIME REMAINING"))/2, 18, FONT_5X7N,
   msInfo[11] = 'S';
   msInfo[12] = 'E';
   msInfo[13] = 'C';
+  msInfo[14] = '\0';
 
   glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, hrsInfo))/2, 34, FONT_5X7N, hrsInfo, mcFgColor);
   glcdPutStr2((128-glcdGetWidthStr(FONT_5X7N, msInfo))/2, 45, FONT_5X7N, msInfo, mcFgColor);
 
 }
-
 
 }
 
@@ -143,8 +146,7 @@ void cfoxInit(u08 mode)
   // Start from scratch by clearing the lcd using the background color
   glcdClearScreen(mcBgColor);
   // Rectangular border.
-  glcdRectangle(2,2,125,61,mcFgColor);
-  //
+  glcdRectangle(2,2,124,60,mcFgColor);
 }
 
 void cfoxButton(u08 pressedButton)
