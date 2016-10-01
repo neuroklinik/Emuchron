@@ -49,7 +49,7 @@ Commands:
                      8 = pong, 9 = puzzle, 10 = slider, 11 = cascade,
                      12 = speed, 13 = spider, 14 = traffic, 15 = bigdigOne,
                      16 = bigdigTwo, 17 = qrHMS, 18 = qrHM, 19 = perftest
-                     20 = cfox
+                     20 = warclock
   'dr'  - Reset clock date to system date
   'ds'  - Set date
           Arguments: <day> <month> <year>

@@ -34,7 +34,7 @@
 #include "../clock/speeddial.h"
 #include "../clock/spiderplot.h"
 #include "../clock/trafficlight.h"
-#include "../clock/cfox.h"
+#include "../clock/warclock.h"
 
 // Emuchron stubs and utilities
 #include "stub.h"
@@ -143,7 +143,7 @@ static clockDriver_t emuMonochron[] =
   {CHRON_QR_HMS,      DRAW_INIT_FULL, qrInit,             qrCycle,             0},
   {CHRON_QR_HM,       DRAW_INIT_FULL, qrInit,             qrCycle,             0},
   {CHRON_PERFTEST,    DRAW_INIT_FULL, perfInit,           perfCycle,           0},
-  {CHRON_CFOX,        DRAW_INIT_FULL, cfoxInit,           cfoxCycle,           cfoxButton}
+  {CHRON_WARCLOCK,    DRAW_INIT_FULL, warclockInit,       warclockCycle,       warclockButton}
 };
 static int emuMonochronCount = sizeof(emuMonochron) / sizeof(clockDriver_t);
 

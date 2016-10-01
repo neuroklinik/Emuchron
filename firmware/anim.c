@@ -32,7 +32,7 @@
 #include "clock/speeddial.h"
 #include "clock/spiderplot.h"
 #include "clock/trafficlight.h"
-#include "clock/cfox.h"
+#include "clock/warclock.h"
 
 // The months of the year in 3 character text
 extern unsigned char *months[12];
@@ -127,7 +127,7 @@ clockDriver_t monochron[] =
   //,{CHRON_DIGITAL_HM,  DRAW_INIT_PARTIAL, digitalHmInit,      digitalCycle,        0}
   //,{CHRON_MOSQUITO,    DRAW_INIT_FULL,    mosquitoInit,       mosquitoCycle,       0}
      {CHRON_NERD,        DRAW_INIT_FULL,    nerdInit,           nerdCycle,           0}
-    ,{CHRON_CFOX,        DRAW_INIT_FULL,    cfoxInit,           cfoxCycle,           cfoxButton}     
+    ,{CHRON_WARCLOCK,    DRAW_INIT_FULL,    warclockInit,       warclockCycle,       warclockButton}     
   //,{CHRON_PONG,        DRAW_INIT_FULL,    pongInit,           pongCycle,           pongButton}
   //,{CHRON_PUZZLE,      DRAW_INIT_FULL,    puzzleInit,         puzzleCycle,         puzzleButton}
   //,{CHRON_SLIDER,      DRAW_INIT_FULL,    sliderInit,         sliderCycle,         0}

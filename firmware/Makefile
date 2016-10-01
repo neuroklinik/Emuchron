@@ -31,7 +31,7 @@ BASE = anim.c buttons.c config.c glcd.c i2c.c ks0108.c monomain.c util.c
 
 # Monochron clocks - cfox
 SRC = $(BASE) \
-clock/cfox.c clock/nerd.c
+clock/warclock.c clock/nerd.c
 
 # Monochron clocks - I
 # SRC = $(BASE) \

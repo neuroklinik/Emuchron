@@ -32,7 +32,7 @@ CSRC = emulator/stub.c emulator/controller.c emulator/lcdglut.c \
   clock/analog.c clock/bigdigit.c clock/digital.c clock/example.c \
   clock/mosquito.c clock/nerd.c clock/perftest.c clock/pong.c clock/puzzle.c \
   clock/qr.c clock/qrencode.c clock/slider.c clock/spotfire.c clock/cascade.c \
-  clock/speeddial.c clock/spiderplot.c clock/trafficlight.c clock/cfox.c
+  clock/speeddial.c clock/spiderplot.c clock/trafficlight.c clock/warclock.c
 FSRC = emulator/expr.l
 BSRC = emulator/expr.y
 EVALSRC = emulator/expr.c
